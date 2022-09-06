@@ -1,0 +1,15 @@
+.cartTable{
+    width: 100%;
+}
+
+th {
+  height: 70px;
+  font-size: larger;
+  padding: 20px;
+}
+
+td{
+  height: 10px;
+  font-size: larger;
+  padding: 20px;
+}

@@ -1,0 +1,41 @@
+<!-- <div *ngIf="cart.length <= 0">
+
+    <h1>No item selected</h1>
+
+</div> -->
+
+<table class="cartTable"> 
+    
+    <!-- *ngIf="cart.length>0"> -->
+
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let item of cart; let i = index">
+            <td>{{ item.name }}</td>
+            <td>{{ item.unitPrice | currency }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>
+
+                <button type="button" (click)="deleteItem(i)">
+                    X
+                </button>
+
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr style="outline: thin solid ;">
+            <td>Total Price:</td>
+            <td>{{ total | currency}}</td>
+        </tr>
+    </tfoot>
+
+
+</table>

@@ -1,0 +1,44 @@
+<h1>Item</h1>
+
+<form [formGroup]="itemForm" (ngSubmit)="processForm()" ngNativeValidate>
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td>
+                <input type="text" formControlName="name" required>
+            </td>
+        </tr>
+        <tr>
+            <td>Unit Price:</td>
+            <td>
+                <input type="number" step=".01" formControlName="unitPrice" required min="0">
+            </td>
+        </tr>
+        <tr>
+            <td>Quantity:</td>
+            <td>
+                <select formControlName="quantity">
+                    <option *ngFor="let qty of quantityArr; let i = index" value="{{ i+1 }}">
+                        {{i+1}}
+                    </option>
+                    <!-- <option value= 1>1</option>
+                    <option value= 2>2</option>
+                    <option value= 3>3</option>
+                    <option value= 4>4</option>
+                    <option value= 5>5</option>
+                    <option value= 6>6</option>
+                    <option value= 7>7</option>
+                    <option value= 8>8</option>
+                    <option value= 9>9</option>
+                    <option value= 10>10</option> -->
+                </select> 
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit">Add</button>
+            </td>
+        </tr>
+    </table>
+</form>
